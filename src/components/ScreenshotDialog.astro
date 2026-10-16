@@ -1,0 +1,27 @@
+---
+import Icon from './Icon.astro';
+---
+<dialog id="screenshot-dialog" aria-label="Captura ampliada del programa">
+  <div class="dialog-toolbar"><p id="screenshot-caption"></p><button type="button" class="dialog-close" aria-label="Cerrar captura"><Icon name="close" /></button></div>
+  <img id="screenshot-full" alt="" width="1400" height="900" />
+</dialog>
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>('#screenshot-dialog');
+  const image = document.querySelector<HTMLImageElement>('#screenshot-full');
+  const caption = document.querySelector<HTMLElement>('#screenshot-caption');
+  if (dialog && image && caption) {
+    document.querySelectorAll<HTMLAnchorElement>('[data-screenshot]').forEach(link => {
+      link.addEventListener('click', event => {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0) return;
+        event.preventDefault();
+        image.src = link.href;
+        image.alt = link.querySelector('img')?.alt ?? 'Captura del programa';
+        caption.textContent = link.dataset.caption ?? '';
+        dialog.showModal();
+      });
+    });
+    dialog.querySelector('button')?.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+    dialog.addEventListener('close', () => image.removeAttribute('src'));
+  }
+</script>

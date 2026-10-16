@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import DownloadLinks from '../components/DownloadLinks.astro';
+import ProductImage from '../components/ProductImage.astro';
+import { products, sitePath, formatDate } from '../data/products';
+---
+<Layout>
+  <section class="hero wrap" aria-labelledby="home-title">
+    <h1 id="home-title">Randomización <br />y seguimiento</h1>
+    <div class="hero-copy"><p>Edita tus juegos con Definitive Randomizer y consulta tu equipo en vivo con Pokémon Tracker Progressive.</p><a class="text-link" href="#herramientas">Ver las herramientas <span aria-hidden="true">↓</span></a></div>
+  </section>
+  <nav class="product-index wrap" aria-label="Elegir herramienta">
+    {products.map(product => <a class={`product-${product.id}`} href={`#${product.slug}`}><span class="product-dot" aria-hidden="true"></span>{product.name}<Icon name="arrow" /></a>)}
+  </nav>
+  <div id="herramientas">
+    {products.map((product, index) => <section class={`product-section product-${product.id} wrap`} id={product.slug} aria-labelledby={`title-${product.id}`}>
+      <div class="product-copy">
+        <p class="product-category">{product.category}</p>
+        <h2 id={`title-${product.id}`}>{product.titleLines[0]} <br />{product.titleLines[1]}</h2>
+        <p class="product-description">{product.description}</p>
+        <p class="compatibility">{product.compatibility}</p>
+        <DownloadLinks product={product} showDetails />
+        <details class="feature-details" id={`funciones-${product.id}`}>
+          <summary>Funciones y requisitos</summary>
+          <ul>{product.features.slice(0, 4).map(feature => <li>{feature}</li>)}</ul>
+          <a class="text-link" href={sitePath(`${product.slug}/`)}>Ver {product.name} <Icon name="arrow" /></a>
+        </details>
+      </div>
+      <ProductImage product={product} eager={index === 0} />
+    </section>)}
+  </div>
+  <section class="downloads-section wrap" id="descargas" aria-labelledby="downloads-title">
+    <div><h2 id="downloads-title">Descargas en GitHub</h2><p>Archivos descargados de GitHub Releases por producto.</p></div>
+    <div class="download-totals">{products.map(product => <div class="download-total"><p class="download-number">{new Intl.NumberFormat('es-GT').format(product.release.totalDownloads)}</p><a href={product.release.releasesUrl}>{product.name} <Icon name="external" /></a><p class="count-date">Consulta: <time datetime={product.release.checkedAt}>{formatDate(product.release.checkedAt)}</time></p></div>)}</div>
+    <details class="count-method"><summary>Cómo se cuentan las descargas</summary><p>Suma de los ZIP de Windows publicados en cada repositorio, incluidas las previews. Se excluyen los archivos de código fuente y las sumas de verificación. Son descargas de archivos, no personas únicas. Las cifras se actualizan al generar la web; la fecha corresponde a la última consulta correcta de GitHub.</p></details>
+  </section>
+  <section class="support-section wrap" id="apoyar" aria-labelledby="support-title"><div><h2 id="support-title">Apoya el desarrollo</h2><p>Ambas herramientas se descargan gratis.<br />Las aportaciones en Ko-fi son voluntarias.</p></div><a class="button support-button" href="https://ko-fi.com/joanjuz"><Icon name="coffee" />Apoyar en Ko-fi <Icon name="external" /></a></section>
+</Layout>
+<script>
+  document.querySelectorAll<HTMLAnchorElement>('a[href^="#funciones-"]').forEach(link => {
+    link.addEventListener('click', () => {
+      const details = document.getElementById(link.hash.slice(1));
+      if (details instanceof HTMLDetailsElement) details.open = true;
+    });
+  });
+</script>

@@ -1,0 +1,66 @@
+{
+  "randomizer": {
+    "repositoryUrl": "https://github.com/joanjuz/Definitive-Randomizer",
+    "releasesUrl": "https://github.com/joanjuz/Definitive-Randomizer/releases",
+    "checkedAt": "2026-10-16T23:28:44.269Z",
+    "stable": {
+      "version": "v4.17.1",
+      "url": "https://github.com/joanjuz/Definitive-Randomizer/releases/tag/v4.17.1",
+      "publishedAt": "2026-10-11T07:29:47Z",
+      "prerelease": false,
+      "assets": [
+        {
+          "name": "pk3DS-Progressive-v4.17.1-win-x64.zip",
+          "url": "https://github.com/joanjuz/Definitive-Randomizer/releases/download/v4.17.1/pk3DS-Progressive-v4.17.1-win-x64.zip"
+        }
+      ]
+    },
+    "preview": {
+      "version": "v0.8.0-preview.1",
+      "url": "https://github.com/joanjuz/Definitive-Randomizer/releases/tag/v0.8.0-preview.1",
+      "publishedAt": "2026-10-16T17:59:46Z",
+      "prerelease": true,
+      "assets": [
+        {
+          "name": "DefinitiveRandomizer-0.8.0-preview.1-win-x64.zip",
+          "url": "https://github.com/joanjuz/Definitive-Randomizer/releases/download/v0.8.0-preview.1/DefinitiveRandomizer-0.8.0-preview.1-win-x64.zip"
+        }
+      ]
+    },
+    "featured": {
+      "version": "v0.8.0-preview.1",
+      "url": "https://github.com/joanjuz/Definitive-Randomizer/releases/tag/v0.8.0-preview.1",
+      "publishedAt": "2026-10-16T17:59:46Z",
+      "prerelease": true,
+      "assets": [
+        {
+          "name": "DefinitiveRandomizer-0.8.0-preview.1-win-x64.zip",
+          "url": "https://github.com/joanjuz/Definitive-Randomizer/releases/download/v0.8.0-preview.1/DefinitiveRandomizer-0.8.0-preview.1-win-x64.zip"
+        }
+      ]
+    },
+    "totalDownloads": 21,
+    "countedAssets": 3
+  },
+  "tracker": {
+    "repositoryUrl": "https://github.com/joanjuz/NuzlockeTracker",
+    "releasesUrl": "https://github.com/joanjuz/NuzlockeTracker/releases",
+    "checkedAt": "2026-10-16T23:28:44.523Z",
+    "stable": {
+      "version": "v0.24.0",
+      "url": "https://github.com/joanjuz/NuzlockeTracker/releases/tag/v0.24.0",
+      "publishedAt": "2026-10-11T07:24:50Z",
+      "prerelease": false,
+      "assets": [
+        {
+          "name": "PokemonTracker-Windows-x64.zip",
+          "url": "https://github.com/joanjuz/NuzlockeTracker/releases/download/v0.24.0/PokemonTracker-Windows-x64.zip"
+        }
+      ]
+    },
+    "preview": null,
+    "featured": null,
+    "totalDownloads": 2,
+    "countedAssets": 1
+  }
+}

@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import DownloadLinks from '../components/DownloadLinks.astro';
+import ProductImage from '../components/ProductImage.astro';
+import { products, sitePath, type Product } from '../data/products';
+export function getStaticPaths() { return products.map(product => ({ params: { producto: product.slug }, props: { product } })); }
+interface Props { product: Product; }
+const { product } = Astro.props;
+---
+<Layout title={`${product.name} · Funciones y descarga | PokeJuz`} description={product.description}>
+  <div class={`product-page product-${product.id}`}>
+    <section class="detail-intro wrap">
+      <a class="back-link" href={sitePath('#herramientas')}>← Todas las herramientas</a>
+      <p class="product-category">{product.category}</p>
+      <h1>{product.titleLines[0]} <br />{product.titleLines[1]}</h1>
+      <p class="detail-description">{product.description}</p>
+      <DownloadLinks product={product} />
+      <p class="product-note">{product.note}</p>
+    </section>
+    <div class="detail-screenshot wrap"><ProductImage product={product} eager sizes="(min-width: 1500px) 1350px, 90vw" /></div>
+    <section class="gallery-section wrap" aria-labelledby="gallery-title">
+      <h2 id="gallery-title">Capturas del programa</h2>
+      <div class:list={['product-gallery', { 'single-image': product.gallery.length === 1 }]}>
+        {product.gallery.map(screenshot => <ProductImage product={product} screenshot={screenshot} sizes={product.gallery.length === 1 ? '(min-width: 1500px) 1350px, 90vw' : '(max-width: 760px) 90vw, 45vw'} />)}
+      </div>
+    </section>
+    <section class="detail-section wrap" aria-labelledby="features-title"><h2 id="features-title">Funciones</h2><ul class="feature-list">{product.features.map(feature => <li>{feature}</li>)}</ul></section>
+    <section class="detail-section alternate wrap" aria-labelledby="requirements-title"><h2 id="requirements-title">Requisitos</h2><div><ul>{product.requirements.map(requirement => <li>{requirement}</li>)}</ul><p class="compatibility">{product.games}</p></div></section>
+    <section class="detail-section wrap" aria-labelledby="start-title"><h2 id="start-title">Cómo empezar</h2><ol>{product.steps.map(step => <li>{step}</li>)}</ol></section>
+    <section class="detail-section alternate wrap" aria-labelledby="links-title"><h2 id="links-title">Enlaces oficiales</h2><div class="official-links"><a class="text-link" href={product.release.releasesUrl}>Todas las versiones <Icon name="external" /></a><a class="text-link" href={product.release.repositoryUrl}>Código e instrucciones en GitHub <Icon name="external" /></a><a class="text-link" href="https://ko-fi.com/joanjuz">Apoyar en Ko-fi <Icon name="external" /></a></div></section>
+  </div>
+</Layout>

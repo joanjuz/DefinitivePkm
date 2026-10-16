@@ -61,3 +61,26 @@ No sustituir pruebas reales por afirmaciones sin evidencia.
 - Verificar navegacion, enlaces, errores de consola y visualizacion.
 - Mantener una arquitectura sencilla y preparada para ampliaciones.
 - Documentar las decisiones tecnicas relevantes.
+
+## Escritura y voz editorial
+
+- Utilizar automaticamente copywriting para crear textos de la web.
+- Utilizar no-ai-slop para revisar los textos antes de entregarlos.
+- Redactar en español natural, preciso y profesional.
+- Evitar esloganes genericos y frases publicitarias vacias.
+- No utilizar "Tu partida. Tus reglas", "lleva tu experiencia
+  al siguiente nivel", "descubre un mundo de posibilidades",
+  "el poder esta en tus manos" ni expresiones equivalentes.
+- Cada titulo debe comunicar una funcion, beneficio concreto
+  o informacion relevante del producto.
+- Preferir verbos claros: editar, randomizar, configurar,
+  descargar, registrar, consultar y sincronizar.
+- No inventar caracteristicas, resultados ni estadisticas.
+- Mantener el nombre real de cada producto.
+- No llenar espacios visuales con texto innecesario.
+- No generar esloganes si el usuario no los solicita.
+- Priorizar claridad antes que creatividad publicitaria.
+- Revisar los textos finales y eliminar cualquier frase
+  que pudiera servir indistintamente para otro producto.
+- Estas reglas se aplican a titulos, subtitulos, botones,
+  tarjetas, descripciones, menus y metadatos SEO.

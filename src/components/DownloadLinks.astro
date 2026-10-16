@@ -1,0 +1,16 @@
+---
+import Icon from './Icon.astro';
+import { primaryRelease, isPreview, type Product } from '../data/products';
+interface Props { product: Product; showDetails?: boolean; }
+const { product, showDetails = false } = Astro.props;
+const release = primaryRelease(product);
+const preview = isPreview(product, release);
+---
+<div class="download-links">
+  <a class="button product-button" href={release?.url ?? product.release.releasesUrl}>
+    <Icon name="download" />{preview ? 'Descargar preview' : 'Descargar'}
+    <span class="sr-only"> {product.name}{release ? ` ${release.version}` : ''} en GitHub</span>
+  </a>
+  {showDetails && <a class="text-link" href={`#funciones-${product.id}`}>Ver funciones <Icon name="arrow" /></a>}
+</div>
+<p class="release-line">{release && <><span>{release.version}</span><span aria-hidden="true"> · </span></>}{preview ? 'Preview para pruebas' : 'Versión estable'} · Windows x64</p>

@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { sitePath } from '../data/products';
+const token = import.meta.env.PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN?.trim();
+const analyticsEnabled = Boolean(token && /^[a-f\d]{32}$/i.test(token));
+---
+<Layout title="Privacidad | PokeJuz" description="Información sobre las estadísticas públicas de descargas y las estadísticas privadas de visitas en PokeJuz.">
+  <article class="prose wrap">
+    <a class="back-link" href={sitePath()}>← Inicio</a>
+    <h1>Privacidad</h1>
+    <h2>Visitas a esta web</h2>
+    {analyticsEnabled ? <><p>Esta web utiliza Cloudflare Web Analytics para consultar estadísticas agregadas de visitas y rendimiento. Solo el administrador puede acceder al panel; las visitas no se publican en esta web.</p><p>Cloudflare indica que este servicio no utiliza cookies para identificar visitantes. Puedes consultar su <a href="https://developers.cloudflare.com/web-analytics/about/">documentación de Web Analytics</a>.</p></> : <p>Esta versión no carga un servicio de analítica de visitas. No incluye contadores públicos de visitas, formularios ni cuentas de usuario.</p>}
+    <h2>Descargas públicas</h2><p>Las cifras de descargas proceden de los contadores públicos de GitHub Releases. La web consulta esos datos al generarse, sin enviar solicitudes a GitHub desde el navegador para calcularlos.</p><p>Se suman los archivos ZIP distribuibles de Windows de las versiones publicadas. Las cifras incluyen previews y descargas repetidas; no equivalen a personas únicas.</p>
+    <h2>Recursos y enlaces externos</h2><p>Las capturas y fuentes tipográficas se sirven con la propia web. Al abrir un enlace de GitHub o Ko-fi, se aplican las condiciones y la política de privacidad del servicio de destino. GitHub Pages aloja esta web y puede procesar datos técnicos de las solicitudes.</p>
+    <h2>Las aplicaciones</h2><p>Esta información se refiere a la web PokeJuz. Para conocer cómo cada aplicación guarda los datos de las partidas y configura sus conexiones, consulta las instrucciones de su repositorio.</p>
+    <p><a href="https://github.com/joanjuz">Herramientas de joanjuz</a></p>
+  </article>
+</Layout>
