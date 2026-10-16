@@ -57,3 +57,7 @@ Para activarla, el propietario debe crear la propiedad del sitio en su cuenta de
 El workflow se ejecuta únicamente de forma manual. No tiene eventos push ni schedule para evitar publicaciones involuntarias. Antes de publicarlo, el propietario deberá seleccionar GitHub Actions en Settings → Pages y ejecutar el workflow cuando autorice el lanzamiento.
 
 La implementación inicial se preparó sin commit, push ni despliegue. El propietario autorizó después la publicación de esta versión en GitHub Pages. Los despliegues siguientes siguen requiriendo ejecutar el workflow manualmente.
+
+## Adaptación a pantallas grandes
+
+Se elimina el límite global de 1920 px para que las secciones ocupen el ancho disponible. A partir de ese ancho se aumenta progresivamente la tipografía con una fórmula que combina rem y vw, manteniendo los límites de lectura en caracteres. Capturas, visor e iconos acompañan esa escala. No se detecta ni se bloquea el zoom del navegador.

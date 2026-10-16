@@ -18,11 +18,11 @@ const { product } = Astro.props;
       <DownloadLinks product={product} />
       <p class="product-note">{product.note}</p>
     </section>
-    <div class="detail-screenshot wrap"><ProductImage product={product} eager sizes="(min-width: 1500px) 1350px, 90vw" /></div>
+    <div class="detail-screenshot wrap"><ProductImage product={product} eager sizes="(min-width: 1921px) 90vw, (min-width: 1500px) 1350px, 90vw" /></div>
     <section class="gallery-section wrap" aria-labelledby="gallery-title">
       <h2 id="gallery-title">Capturas del programa</h2>
       <div class:list={['product-gallery', { 'single-image': product.gallery.length === 1 }]}>
-        {product.gallery.map(screenshot => <ProductImage product={product} screenshot={screenshot} sizes={product.gallery.length === 1 ? '(min-width: 1500px) 1350px, 90vw' : '(max-width: 760px) 90vw, 45vw'} />)}
+        {product.gallery.map(screenshot => <ProductImage product={product} screenshot={screenshot} sizes={product.gallery.length === 1 ? '(min-width: 1921px) 90vw, (min-width: 1500px) 1350px, 90vw' : '(max-width: 760px) 90vw, 45vw'} />)}
       </div>
     </section>
     <section class="detail-section wrap" aria-labelledby="features-title"><h2 id="features-title">Funciones</h2><ul class="feature-list">{product.features.map(feature => <li>{feature}</li>)}</ul></section>

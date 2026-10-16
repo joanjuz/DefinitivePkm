@@ -2,7 +2,7 @@
   "randomizer": {
     "repositoryUrl": "https://github.com/joanjuz/Definitive-Randomizer",
     "releasesUrl": "https://github.com/joanjuz/Definitive-Randomizer/releases",
-    "checkedAt": "2026-10-16T23:28:44.269Z",
+    "checkedAt": "2026-10-16T23:38:05.458Z",
     "stable": {
       "version": "v4.17.1",
       "url": "https://github.com/joanjuz/Definitive-Randomizer/releases/tag/v4.17.1",
@@ -39,13 +39,13 @@
         }
       ]
     },
-    "totalDownloads": 21,
+    "totalDownloads": 22,
     "countedAssets": 3
   },
   "tracker": {
     "repositoryUrl": "https://github.com/joanjuz/NuzlockeTracker",
     "releasesUrl": "https://github.com/joanjuz/NuzlockeTracker/releases",
-    "checkedAt": "2026-10-16T23:28:44.523Z",
+    "checkedAt": "2026-10-16T23:38:05.663Z",
     "stable": {
       "version": "v0.24.0",
       "url": "https://github.com/joanjuz/NuzlockeTracker/releases/tag/v0.24.0",

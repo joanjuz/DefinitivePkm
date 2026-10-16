@@ -55,3 +55,7 @@ Comprobaciones de esta actualización:
 - Revisión visual de la portada actualizada y la galería del Tracker.
 
 No se controló el escritorio ni se ejecutaron las aplicaciones para esta actualización. No se realizaron commit, push ni publicación.
+
+## Ajuste responsive posterior a la publicación
+
+Se comprobaron inicio, ambos productos y privacidad a 320, 390, 768, 960, 1440, 1920, 2560, 3840 y 6880 px, sin desbordamiento horizontal ni límite de ancho en el body. Se revisaron capturas en móvil, escritorio y un viewport de 6880 × 3124 equivalente al espacio CSS de la captura del propietario al 25 %. También se comprobó texto al 200 % a 640 px en inicio y ambos productos. Las comprobaciones se ejecutaron en Chrome sin controlar el escritorio.
