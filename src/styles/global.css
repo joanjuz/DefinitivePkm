@@ -7,6 +7,7 @@
   --muted: #b5bbc5;
   --blue: #8ab4e8;
   --red: #d98b92;
+  --green: #b2c6a8;
   --accent: var(--blue);
   --accent-ink: #14202e;
   --space: clamp(2.5rem, 5.5vw, 5.75rem);
@@ -42,7 +43,7 @@ main:focus { outline: none; }
 .site-header { display: flex; justify-content: space-between; align-items: center; gap: 2rem; padding-block: 1.8rem; }
 .wordmark { text-decoration: none; font-size: 1.75rem; font-weight: 850; letter-spacing: -.055em; white-space: nowrap; }
 .wordmark span { color: var(--blue); }
-.site-header nav { display: flex; align-items: center; gap: clamp(1rem, 3vw, 2.4rem); font-size: .875rem; font-weight: 650; }
+.site-header nav { display: flex; flex-wrap: wrap; align-items: center; gap: clamp(1rem, 3vw, 2.4rem); font-size: .875rem; font-weight: 650; }
 .site-header nav a { text-decoration: none; padding-block: .5rem; }
 .site-header nav a:hover, .text-link:hover, .back-link:hover, .site-footer a:hover { color: var(--accent); }
 .support-link { display: inline-flex; gap: .6rem; align-items: center; }
@@ -57,6 +58,10 @@ main:focus { outline: none; }
 .product-index a:hover { color: var(--ink); }
 .product-index svg { width: .9375rem; height: .9375rem; }
 .product-dot { width: 6px; height: 6px; flex-shrink: 0; border-radius: 50%; background: var(--accent); }
+.product-pokechu { --accent: var(--green); --accent-ink: #1d2a22; }
+.product-section.product-pokechu { background: var(--surface); }
+.pokechu-captures { grid-column: 1 / -1; min-width: 0; }
+.pokechu-captures .product-gallery { padding-top: 1.5rem; }
 .product-tracker { --accent: var(--red); --accent-ink: #2b191c; }
 .product-section { display: grid; grid-template-columns: .88fr 1.12fr; gap: clamp(2rem, 4.5vw, 5rem); align-items: center; padding-block: var(--space); }
 .product-section.product-randomizer { background: var(--surface); }
@@ -139,7 +144,7 @@ dialog::backdrop { background: rgb(0 0 0 / .85); }
 @media (max-width: 760px) {
   :root { --margin: 1.25rem; }
   .site-header { flex-wrap: wrap; gap: .75rem 1.5rem; }
-  .site-header nav { gap: 1.2rem; font-size: .875rem; }
+  .site-header nav { gap: .25rem 1rem; font-size: .875rem; }
   .wordmark { font-size: 1.5rem; }
   .hero { grid-template-columns: 1fr; gap: 1.5rem; padding-top: 2rem; }
   h1 { font-size: clamp(1.9rem, 8.5vw, 3.7rem); }

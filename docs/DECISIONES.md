@@ -61,3 +61,8 @@ La implementación inicial se preparó sin commit, push ni despliegue. El propie
 ## Adaptación a pantallas grandes
 
 Se elimina el límite global de 1920 px para que las secciones ocupen el ancho disponible. A partir de ese ancho se aumenta progresivamente la tipografía con una fórmula que combina rem y vw, manteniendo los límites de lectura en caracteres. Capturas, visor e iconos acompañan esa escala. No se detecta ni se bloquea el zoom del navegador.
+
+
+## Pokechu en la portada
+
+Pokechu se presenta como una tercera sección con acento verde musgo, enlace a su web independiente y tres capturas proporcionadas por el propietario. La Pokédex y los logros se muestran en una galería desplegable. El botón permite jugar en el navegador y no se incorpora Pokechu al contador de descargas de Windows. La portada y la navegación incluyen el nuevo proyecto. Se reutiliza el visor de capturas existente para los tres proyectos.

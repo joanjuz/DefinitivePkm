@@ -1,0 +1,37 @@
+---
+import ScreenshotImage from './ScreenshotImage.astro';
+import Icon from './Icon.astro';
+import games from '../assets/pokechu-minijuegos.png';
+import pokedex from '../assets/pokechu-pokedex.png';
+import achievements from '../assets/pokechu-logros.png';
+---
+<section class="product-section product-pokechu wrap" id="minijuegos" aria-labelledby="title-pokechu">
+  <div class="product-copy">
+    <p class="product-category">Minijuegos Pokémon en el navegador</p>
+    <h2 id="title-pokechu">Pokechu</h2>
+    <p class="product-description">Compara estadísticas, reconoce siluetas y resuelve Pokédle. Elige las generaciones y registra los Pokémon que aciertas en tu propia Pokédex.</p>
+    <p class="compatibility">Juega gratis en español desde el móvil o el PC. Tu progreso y tus logros se guardan en este navegador.</p>
+    <div class="download-links">
+      <a class="button" href="https://joanjuz.github.io/Pokechu/">Jugar a Pokechu <Icon name="external" /></a>
+      <a class="text-link" href="https://joanjuz.github.io/Pokechu/#/pokedex">Ver la Pokédex <Icon name="external" /></a>
+    </div>
+    <details class="feature-details">
+      <summary>Juegos y progreso</summary>
+      <ul>
+        <li>Mayor o menor, Pirámide Pokémon y Construye tu BST para jugar con las estadísticas.</li>
+        <li>Siluetas, Ojos, Gritos, Pasapalabra, Tabla de cruces y Pokédle.</li>
+        <li>Modo infinito para combinar retos y superar tu mejor racha.</li>
+        <li>Perfiles con Pokédex, puntos y logros. El progreso se conserva en el navegador y dispositivo donde juegas.</li>
+      </ul>
+      <a class="text-link" href="https://joanjuz.github.io/Pokechu/#/progreso">Ver progreso y logros <Icon name="external" /></a>
+    </details>
+  </div>
+  <ScreenshotImage image={games} alt="Pokechu con los ajustes de generaciones y los minijuegos Mayor o menor y Siluetas." caption="Minijuegos · Comparación de estadísticas y siluetas" label="Ampliar los minijuegos de Pokechu" />
+  <details class="pokechu-captures">
+    <summary>Ver capturas de la Pokédex y los logros</summary>
+    <div class="product-gallery">
+      <ScreenshotImage image={pokedex} alt="Pokédex de Pokechu con búsqueda, especies pendientes en silueta y Ekans registrado a color." caption="Pokédex · Las especies acertadas aparecen a color" label="Ampliar la Pokédex de Pokechu" sizes="(max-width: 760px) 90vw, 45vw" />
+      <ScreenshotImage image={achievements} alt="Progreso de Pokechu con puntos globales, especies registradas, perfiles y logros." caption="Progreso · Perfiles, puntos y logros guardados en el navegador" label="Ampliar los logros de Pokechu" sizes="(max-width: 760px) 90vw, 45vw" />
+    </div>
+  </details>
+</section>

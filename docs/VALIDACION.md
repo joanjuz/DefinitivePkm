@@ -59,3 +59,10 @@ No se controló el escritorio ni se ejecutaron las aplicaciones para esta actual
 ## Ajuste responsive posterior a la publicación
 
 Se comprobaron inicio, ambos productos y privacidad a 320, 390, 768, 960, 1440, 1920, 2560, 3840 y 6880 px, sin desbordamiento horizontal ni límite de ancho en el body. Se revisaron capturas en móvil, escritorio y un viewport de 6880 × 3124 equivalente al espacio CSS de la captura del propietario al 25 %. También se comprobó texto al 200 % a 640 px en inicio y ambos productos. Las comprobaciones se ejecutaron en Chrome sin controlar el escritorio.
+
+
+## Integración de Pokechu · 19 de octubre de 2026
+
+Astro check: 0 errores, advertencias y sugerencias. Compilación correcta con 55 variantes de imágenes. Lint de diseño: 0 fallos y advertencias. Inspector a 1440, 768 y 390 px: 0 fallos con las excepciones documentadas del diseño aprobado (eyebrow, few-pictures y still-page); permanece el aviso de ausencia de video.
+
+Chrome: portada a 320, 390, 768, 1440, 2560 y 6880 px sin desbordamientos. Tres capturas de Pokechu cargadas y ampliadas con cierre mediante Escape en cada ancho. Galería de Randomizer y enlace de navegación desde una página de producto comprobados. Sin errores de JavaScript o respuestas locales HTTP fallidas. Destino oficial de Pokechu verificado con respuesta HTTP 200.

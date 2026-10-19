@@ -1,18 +1,11 @@
 ---
-import { Image } from 'astro:assets';
-import Icon from './Icon.astro';
+import ScreenshotImage from './ScreenshotImage.astro';
 import type { Product, ProductScreenshot } from '../data/products';
 interface Props { product: Product; eager?: boolean; screenshot?: ProductScreenshot; sizes?: string; }
-const { product, eager = false, screenshot, sizes = '(max-width: 760px) 90vw, 54vw' } = Astro.props;
+const { product, eager = false, screenshot, sizes } = Astro.props;
 const image = screenshot?.image ?? product.image;
 const alt = screenshot?.alt ?? product.imageAlt;
 const caption = screenshot?.caption ?? product.imageCaption;
 const label = screenshot ? `Ampliar ${screenshot.title} de ${product.name}` : `Ampliar captura de ${product.name}`;
 ---
-<figure class="product-image">
-  <a class="screenshot-link" href={image.src} data-screenshot data-caption={caption} aria-label={label}>
-    <Image src={image} alt={alt} widths={[480, 800, 1200, 1600]} sizes={sizes} format="webp" quality={85} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} decoding="async" />
-    <span class="expand-label"><Icon name="expand" /> Ampliar</span>
-  </a>
-  <figcaption>{caption}</figcaption>
-</figure>
+<ScreenshotImage {image} {alt} {caption} {label} {eager} {sizes} />
