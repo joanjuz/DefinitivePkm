@@ -49,6 +49,17 @@ Cuando se autorice la publicación: seleccionar GitHub Actions en Settings → P
 
 No se recopilan visitas mientras `PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN` esté vacío. Para habilitar Cloudflare Web Analytics, usar el identificador público del beacon de una propiedad creada en la cuenta del administrador. En local se configura en `.env`; en Actions, como variable de repositorio con el mismo nombre. **Nunca introducir un token API de cuenta.** Las visitas solo aparecen en el panel privado del proveedor.
 
+
+## Visión y roadmap del ecosistema
+
+PokeJuz centraliza la planificación de Definitive Randomizer, Progressive Tracker y el futuro Definitive Hub. Estos documentos distinguen metas, investigación y funciones publicadas:
+
+- [Visión y principios](docs/VISION.md)
+- [Roadmap maestro](docs/ROADMAP.md)
+- [Comunidad, YouTube y apoyo voluntario](docs/COMMUNITY.md)
+
+La página pública de [Roadmap](https://joanjuz.github.io/DefinitivePkm/roadmap/) presenta un resumen. La publicación en GitHub Pages continúa siendo manual y requiere revisión.
+
 ## Referencias
 
 - [Definitive Randomizer](https://github.com/joanjuz/Definitive-Randomizer)
