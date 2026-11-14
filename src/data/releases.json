@@ -1,66 +1,47 @@
 {
   "randomizer": {
+    "schemaVersion": 2,
+    "family": "wpf-v1",
     "repositoryUrl": "https://github.com/joanjuz/Definitive-Randomizer",
     "releasesUrl": "https://github.com/joanjuz/Definitive-Randomizer/releases",
-    "checkedAt": "2026-10-16T23:38:05.458Z",
+    "checkedAt": "2026-11-14T02:01:54.201Z",
     "stable": {
-      "version": "v4.17.1",
-      "url": "https://github.com/joanjuz/Definitive-Randomizer/releases/tag/v4.17.1",
-      "publishedAt": "2026-10-11T07:29:47Z",
+      "version": "v1.0.0",
+      "url": "https://github.com/joanjuz/Definitive-Randomizer/releases/tag/v1.0.0",
+      "publishedAt": "2026-11-14T01:31:29Z",
       "prerelease": false,
       "assets": [
         {
-          "name": "pk3DS-Progressive-v4.17.1-win-x64.zip",
-          "url": "https://github.com/joanjuz/Definitive-Randomizer/releases/download/v4.17.1/pk3DS-Progressive-v4.17.1-win-x64.zip"
+          "name": "DefinitiveRandomizer-1.0.0-win-x64.zip",
+          "url": "https://github.com/joanjuz/Definitive-Randomizer/releases/download/v1.0.0/DefinitiveRandomizer-1.0.0-win-x64.zip"
         }
-      ]
+      ],
+      "sourceCommit": "533487a19ab345f8421e5ec912ed0cff69674af6"
     },
-    "preview": {
-      "version": "v0.8.0-preview.1",
-      "url": "https://github.com/joanjuz/Definitive-Randomizer/releases/tag/v0.8.0-preview.1",
-      "publishedAt": "2026-10-16T17:59:46Z",
-      "prerelease": true,
-      "assets": [
-        {
-          "name": "DefinitiveRandomizer-0.8.0-preview.1-win-x64.zip",
-          "url": "https://github.com/joanjuz/Definitive-Randomizer/releases/download/v0.8.0-preview.1/DefinitiveRandomizer-0.8.0-preview.1-win-x64.zip"
-        }
-      ]
-    },
-    "featured": {
-      "version": "v0.8.0-preview.1",
-      "url": "https://github.com/joanjuz/Definitive-Randomizer/releases/tag/v0.8.0-preview.1",
-      "publishedAt": "2026-10-16T17:59:46Z",
-      "prerelease": true,
-      "assets": [
-        {
-          "name": "DefinitiveRandomizer-0.8.0-preview.1-win-x64.zip",
-          "url": "https://github.com/joanjuz/Definitive-Randomizer/releases/download/v0.8.0-preview.1/DefinitiveRandomizer-0.8.0-preview.1-win-x64.zip"
-        }
-      ]
-    },
-    "totalDownloads": 22,
-    "countedAssets": 3
+    "preview": null,
+    "totalDownloads": 109,
+    "countedAssets": 18
   },
   "tracker": {
+    "schemaVersion": 2,
+    "family": "tracker",
     "repositoryUrl": "https://github.com/joanjuz/NuzlockeTracker",
     "releasesUrl": "https://github.com/joanjuz/NuzlockeTracker/releases",
-    "checkedAt": "2026-10-16T23:38:05.663Z",
+    "checkedAt": "2026-11-14T02:01:54.911Z",
     "stable": {
-      "version": "v0.24.0",
-      "url": "https://github.com/joanjuz/NuzlockeTracker/releases/tag/v0.24.0",
-      "publishedAt": "2026-10-11T07:24:50Z",
+      "version": "v1.4.0",
+      "url": "https://github.com/joanjuz/NuzlockeTracker/releases/tag/v1.4.0",
+      "publishedAt": "2026-11-12T04:05:24Z",
       "prerelease": false,
       "assets": [
         {
           "name": "PokemonTracker-Windows-x64.zip",
-          "url": "https://github.com/joanjuz/NuzlockeTracker/releases/download/v0.24.0/PokemonTracker-Windows-x64.zip"
+          "url": "https://github.com/joanjuz/NuzlockeTracker/releases/download/v1.4.0/PokemonTracker-Windows-x64.zip"
         }
       ]
     },
     "preview": null,
-    "featured": null,
-    "totalDownloads": 2,
-    "countedAssets": 1
+    "totalDownloads": 16,
+    "countedAssets": 7
   }
 }

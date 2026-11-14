@@ -1,0 +1,21 @@
+---
+const docs = 'https://github.com/joanjuz/Definitive-Randomizer/blob/533487a19ab345f8421e5ec912ed0cff69674af6/docs/3ds-progressive/';
+const ds = [
+  ['Diamante (USA)', 'ADAE', '5'], ['Platino (USA)', 'CPUE', '1'],
+  ['HeartGold (USA)', 'IPKE', '0'], ['Negro', 'IRBO', '0'],
+  ['Blanco (España)', 'IRAS', '0'], ['Blanco 2 (USA/EUR)', 'IRDO', '0'],
+];
+---
+<section class="compatibility-section wrap" id="compatibilidad" aria-labelledby="compatibility-title">
+  <h2 id="compatibility-title">Juegos y revisiones admitidos</h2>
+  <p>Resumen de la matriz oficial de 1.0.0. Una función implementada o comprobada con archivos no equivale a una prueba dentro del juego.</p>
+  <div class="platform-row"><h3>Nintendo 3DS</h3><div><p>X/Y, Rubí Omega/Zafiro Alfa, Sol/Luna y Ultra Sol/Ultra Luna.</p><p>Requiere una extracción ya descifrada. Las funciones varían por juego; las mentas solo corresponden a USUM y su prueba jugable está confirmada en Ultra Sol. No se anuncia soporte para todas las revisiones.</p></div></div>
+  <div class="platform-row"><h3>Nintendo DS</h3><div>
+    <p>Seis perfiles concretos de ROM original, comprobados por código, revisión y huellas de datos.</p>
+    <table><caption>Perfiles de Nintendo DS</caption><thead><tr><th scope="col">Juego</th><th scope="col">Código</th><th scope="col">Revisión</th></tr></thead><tbody>{ds.map(([game, code, revision]) => <tr><th scope="row">{game}</th><td>{code}</td><td>{revision}</td></tr>)}</tbody></table>
+    <p>Proyectos persistentes <code>.nds.drproj</code> en los seis juegos. El editor de eventos y mapas se limita a Platino CPUE/1: edición de NPC y checkpoints; terreno, matrices y estructuras de solo lectura. No permite editar scripts arbitrarios, warps ni geometría.</p>
+    <p>El modo romhack está en beta. Perla, SoulSilver, Negro 2 y otras revisiones no tienen perfil admitido. La región concreta de Negro IRBO no está documentada.</p>
+  </div></div>
+  <div class="platform-row"><h3>Nintendo Switch</h3><div><p>Espada y Escudo, versión 1.3.2. Exportación de mods en formato Ryujinx, con perfiles propios para cada juego.</p><p>Pruebas en juego documentadas en Ryujinx. Consola real, Atmosphère y DLC no están validados. No se acredita una partida completa ni todas las combinaciones de opciones.</p></div></div>
+  <div class="documentation-links"><a class="text-link" href={`${docs}COMPATIBILIDAD_PUBLICA.md`}>Matriz oficial y evidencias</a><a class="text-link" href={`${docs}LIMITACIONES_ESTABLE.md`}>Limitaciones de la estable</a><a class="text-link" href={`${docs}PRIMEROS_PASOS.md`}>Guía de primeros pasos</a></div>
+</section>
