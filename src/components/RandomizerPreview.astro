@@ -1,0 +1,41 @@
+---
+import Icon from './Icon.astro';
+---
+<section class="mega-section wrap" id="mega-ability-sync" aria-labelledby="mega-title">
+  <div class="mega-intro">
+    <h2 id="mega-title">Mega Ability Sync</h2>
+    <p class="mega-lead">Habilidades sincronizadas en combates por enlace de Ultra Sol y Ultra Luna.</p>
+    <p>Entre juegos randomizados, la habilidad de una megaevolución puede resolverse de forma distinta en cada juego. Este parche permite conservar habilidades randomizadas diferentes y sincronizar su comportamiento en el escenario soportado.</p>
+    <p class="preview-channel">Disponible en la línea 1.1 Preview · No incluido en 1.0.0</p>
+    <a class="text-link" href="https://ko-fi.com/joanjuz">Conocer el acceso anticipado <Icon name="external" /></a>
+  </div>
+  <div class="mega-explanation">
+    <figure class="sync-diagram">
+      <div class="sync-players">
+        <div><strong>Jugador A</strong><span>USUM compatible</span><span>Parche instalado</span></div>
+        <svg class="sync-arrow" aria-hidden="true" viewBox="0 0 40 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8h34m-6-6 6 6-6 6M38 16H4m6-6-6 6 6 6" /></svg>
+        <div><strong>Jugador B</strong><span>USUM compatible</span><span>Parche instalado</span></div>
+      </div>
+      <figcaption>Esquema del requisito: ambos juegos deben llevar el parche correspondiente.</figcaption>
+    </figure>
+    <dl class="sync-facts">
+      <div><dt>Validación</dt><dd>El propietario confirmó el caso principal en combate real entre dos Ultra Luna randomizados de forma distinta, con el parche instalado en los dos juegos.</dd></div>
+      <div><dt>Alcance</dt><dd>Solo Ultra Sol y Ultra Luna compatibles. Ultra Sol contra Ultra Luna, dobles, Rayquaza y la convivencia con Persistent Items siguen sin confirmación jugable. Otros escenarios multijugador mantienen limitaciones y requieren pruebas.</dd></div>
+    </dl>
+    <p class="availability-note">No garantiza una conexión online universal ni resuelve todos los problemas de los combates por enlace.</p>
+  </div>
+</section>
+<section class="preview-features wrap" id="novedades-preview" aria-labelledby="preview-title">
+  <div><h2 id="preview-title">Más herramientas en 1.1 Preview</h2><p>Incluye las funciones de la estable y añade estas opciones. La compilación de acceso anticipado está en preparación.</p></div>
+  <dl class="preview-feature-list">
+    <div><dt>Perfiles compartibles</dt><dd>Exporta la configuración de Global Template de 3DS como <code>.drprofile.json</code>. Al importarla, el programa comprueba la compatibilidad y permite elegir qué secciones aplicar. El perfil no incluye ROMs ni todos los recursos externos.</dd></div>
+    <div><dt>Informes de compatibilidad</dt><dd>Consulta el estado de parches como Player Level Caps, Persistent Items y Shiny Rate en tu proyecto de USUM.</dd></div>
+    <div><dt>Diagnóstico de megaevoluciones</dt><dd>Examina los datos relevantes de las megaevoluciones de USUM y compáralos entre proyectos.</dd></div>
+    <div><dt>Procedencia de perfiles</dt><dd>Incluye la procedencia declarada de las configuraciones aplicadas al exportar Definitive Game Data de USUM.</dd></div>
+  </dl>
+</section>
+<section class="license-section wrap" aria-labelledby="license-title">
+  <h2 id="license-title">Código abierto en ambas versiones</h2>
+  <p>Definitive Randomizer sigue siendo GPLv3. Quien recibe una compilación tiene derecho a redistribuirla y a obtener su código fuente correspondiente. Ko-fi ofrece acceso anticipado a las compilaciones preparadas; la estable es gratuita y las aportaciones de apoyo son voluntarias.</p>
+  <a class="text-link" href="https://github.com/joanjuz/Definitive-Randomizer/blob/533487a19ab345f8421e5ec912ed0cff69674af6/LICENSE.md">Consultar la licencia <Icon name="external" /></a>
+</section>

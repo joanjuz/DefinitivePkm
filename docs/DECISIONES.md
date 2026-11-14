@@ -21,7 +21,7 @@ Se consultaron los LEEME de las dos distribuciones facilitadas y las releases of
 - https://github.com/joanjuz/Definitive-Randomizer/releases
 - https://github.com/joanjuz/NuzlockeTracker/releases
 
-La descarga destacada de Definitive Randomizer está fijada por petición del propietario a `v0.8.0-preview.1`. No cambia automáticamente al publicarse otra preview o una nueva estable. La sincronización conserva los metadatos de esa versión por separado y las instrucciones visibles corresponden a su ejecutable actual.
+La fijación histórica a `v0.8.0-preview.1` se sustituye para el lanzamiento 1.0.0 por selección de estables WPF v1.x con ZIP publicado. WinForms v4.x y previews v0.x no son candidatas a descarga principal. Se conservan sus descargas en el total histórico. El Tracker se sincroniza por separado. Las capturas históricas de v0.8.0 se identifican como tales y no se presentan como evidencia visual de 1.0 o Mega Ability Sync.
 
 El propietario confirmó que el Tracker también está probado en Azahar. La web presenta Lime3DS y Azahar, sin inventar una matriz de pruebas de todas las combinaciones de juego y versión del emulador. Los juegos anunciados siguen siendo X/Y, ORAS y USUM 1.0; no se añade Sol/Luna al Tracker.
 

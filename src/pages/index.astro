@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import PokechuSection from '../components/PokechuSection.astro';
 import Icon from '../components/Icon.astro';
 import DownloadLinks from '../components/DownloadLinks.astro';
+import RandomizerVersions from '../components/RandomizerVersions.astro';
 import ProductImage from '../components/ProductImage.astro';
 import { products, sitePath, formatDate } from '../data/products';
 ---
@@ -22,7 +23,7 @@ import { products, sitePath, formatDate } from '../data/products';
         <h2 id={`title-${product.id}`}>{product.titleLines[0]} <br />{product.titleLines[1]}</h2>
         <p class="product-description">{product.description}</p>
         <p class="compatibility">{product.compatibility}</p>
-        <DownloadLinks product={product} showDetails />
+        {product.id === 'randomizer' ? <RandomizerVersions product={product} compact /> : <DownloadLinks product={product} showDetails />}
         <details class="feature-details" id={`funciones-${product.id}`}>
           <summary>Funciones y requisitos</summary>
           <ul>{product.features.slice(0, 4).map(feature => <li>{feature}</li>)}</ul>

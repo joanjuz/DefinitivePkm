@@ -15,6 +15,7 @@ export interface Release {
   publishedAt: string;
   prerelease?: boolean;
   assets: { name: string; url: string }[];
+  sourceCommit?: string;
 }
 export interface ReleaseSummary {
   repositoryUrl: string;
@@ -22,7 +23,8 @@ export interface ReleaseSummary {
   checkedAt: string;
   stable: Release | null;
   preview: Release | null;
-  featured?: Release | null;
+  schemaVersion?: number;
+  family?: string;
   totalDownloads: number;
   countedAssets: number;
 }
@@ -41,29 +43,31 @@ export const products = [
     slug: 'definitive-randomizer',
     name: 'Definitive Randomizer',
     titleLines: ['Definitive', 'Randomizer'],
-    category: 'Edición de juegos de Nintendo 3DS',
-    description: 'Edita Pokémon, movimientos, entrenadores y encuentros. Configura la randomización y los límites de nivel para ajustar la progresión del juego.',
-    compatibility: 'Las funciones Progressive se centran en Ultra Sol y Ultra Luna.',
+    category: 'Edición y randomización · Nintendo 3DS, DS y Switch',
+    description: 'Edita y randomiza Pokémon en Nintendo 3DS, DS y Switch. Configura la progresión, guarda plantillas y genera proyectos con la nueva interfaz WPF.',
+    compatibility: 'Juegos y revisiones concretas. Las funciones disponibles dependen de cada plataforma.',
     features: [
       'Edición de estadísticas, tipos y habilidades.',
       'Randomización de equipos de entrenadores y encuentros salvajes.',
       'Plantillas reutilizables y generación por lotes con Batch ROM Builder.',
       'Límites de nivel para jugadores y entrenadores.',
+      'Progressive BST para configurar la progresión de los encuentros.',
+      'Mentas y Player Level Caps en Ultra Sol y Ultra Luna compatibles.',
+      'Proyectos persistentes de Nintendo DS y exportación de mods de Espada/Escudo 1.3.2.',
     ],
-    requirements: ['Windows x64.', 'Archivos del juego extraídos a partir de tu propia copia.', 'La distribución incluye .NET; no requiere instalarlo por separado.'],
-    games: 'X/Y, Rubí Omega/Zafiro Alfa, Sol/Luna y Ultra Sol/Ultra Luna. Las funciones disponibles dependen del juego y la versión.',
-    steps: ['Descarga el ZIP de Definitive Randomizer v0.8.0-preview.1.', 'Extrae todo el contenido y conserva las carpetas y DLL junto al ejecutable.', 'Abre DefinitiveRandomizer.exe.', 'Abre una carpeta de juego extraído y configura los cambios. Conserva una copia original aparte.'],
-    note: 'La descarga destacada es Definitive Randomizer v0.8.0-preview.1, con la interfaz que muestran estas capturas. Esta versión se distribuye como preview para pruebas.',
+    requirements: ['Windows x64. La guía oficial no concreta una versión mínima de Windows.', 'Una copia propia de un juego y revisión admitidos: extracción ya descifrada en 3DS, archivo .nds en DS o extracción 1.3.2 en Espada/Escudo.', 'El ZIP incluye .NET y las dependencias; conserva todas sus carpetas. No incluye ni descarga juegos.'],
+    games: 'Consulta la compatibilidad por plataforma más abajo antes de preparar tu proyecto. Las pruebas con archivos y las pruebas dentro del juego tienen alcances distintos.',
+    steps: ['Descarga el ZIP de la versión estable indicada en esta página y comprueba el SHA-256 con SHA256SUMS.txt.', 'Extrae el ZIP completo en una carpeta nueva, sin copiarlo sobre una versión anterior. Conserva las DLL y todas las carpetas incluidas.', 'Abre DefinitiveRandomizer.exe. En «Abrir proyecto…», selecciona el archivo .nds o la carpeta extraída de 3DS o Switch.', 'Trabaja con copias y respalda proyectos y partidas. Guarda antes de reconstruir la ROM de 3DS, exportar una ROM nueva de DS o generar el mod de Switch.'],
+    note: 'La estable es la opción recomendada para la mayoría de usuarios. El balance Eris-Ultranova es opcional y no se activa automáticamente. Las capturas conservadas corresponden a una preview anterior; no muestran las novedades de 1.1.',
     image: randomizerImage,
     imageAlt: 'Definitive Randomizer v0.8.0-preview.1 con Bulbasaur seleccionado, estadísticas base, tipos e inspector del editor.',
-    imageCaption: 'v0.8.0-preview.1 · Editor de Pokémon con proyecto cargado',
+    imageCaption: 'Captura histórica · v0.8.0-preview.1 · Editor con proyecto cargado',
     gallery: [{
       title: 'Editor al iniciar',
       image: randomizerStart,
       alt: 'Definitive Randomizer al iniciar: navegación lateral de editores, formulario de Pokémon e inspector, sin proyecto cargado.',
-      caption: 'v0.8.0-preview.1 · Editor antes de abrir un proyecto',
+      caption: 'Captura histórica · v0.8.0-preview.1 · Editor antes de abrir un proyecto',
     }],
-    featuredVersion: 'v0.8.0-preview.1',
     release: releases.randomizer,
   },
   {
@@ -80,6 +84,8 @@ export const products = [
       'Rutas, registro de Pokémon debilitados y Living Dex.',
       'Análisis ofensivo y defensivo del equipo.',
       'Diseño de overlays para OBS con sprites, motes y barras de vida.',
+      'Importación de Definitive Game Data de Ultra Sol/Ultra Luna por partida.',
+      'Etapas y límites de nivel manuales con avisos informativos, sin modificar la partida.',
     ],
     requirements: ['Windows 10 u 11 de 64 bits.', 'Microsoft Edge WebView2 Runtime.', 'Lime3DS o Azahar y un juego compatible en versión 1.0 para la lectura en vivo.', 'El ejecutable incluye sus dependencias; no requiere Python ni Node.js.'],
     games: 'Juegos compatibles: X/Y, Rubí Omega/Zafiro Alfa y Ultra Sol/Ultra Luna 1.0. Lectura probada en Lime3DS y Azahar; la compatibilidad puede variar según el juego y la versión del emulador.',
@@ -95,23 +101,16 @@ export const products = [
       { title: 'OBS', image: trackerObs, alt: 'Editor de overlays de OBS con controles de composición, sprites, tipografía y barras de vida.', caption: 'OBS · Configuración del overlay del equipo' },
       { title: 'Conexión', image: trackerConnection, alt: 'Pantalla de conexión del Tracker con selector de juego, emulador y proceso, y sección de plantillas pk3DS Progressive.', caption: 'Conexión · Juego, emulador y proceso' },
     ],
-    featuredVersion: null,
     release: releases.tracker,
   },
 ] as const;
 
 export type Product = (typeof products)[number];
 export function primaryRelease(product: Product): Release | null {
-  const { stable, preview, featured } = product.release;
-  if (product.featuredVersion) {
-    const pinned = [featured, preview, stable].find(release => release?.version === product.featuredVersion);
-    if (!pinned) throw new Error(`Faltan metadatos para la versión destacada ${product.featuredVersion}. Ejecuta npm run sync:releases.`);
-    return pinned;
-  }
-  return stable ?? preview;
-}
-export function isPreview(product: Product, release: Release | null): boolean {
-  return release?.prerelease ?? Boolean(release && release.version === product.release.preview?.version);
+  const { stable, schemaVersion, family } = product.release;
+  if (!stable || stable.prerelease || schemaVersion !== 2) return null;
+  if (product.id === 'randomizer' && (family !== 'wpf-v1' || !/^v1\.\d+\.\d+$/.test(stable.version))) return null;
+  return stable;
 }
 export function sitePath(path = ''): string {
   return `${import.meta.env.BASE_URL.replace(/\/$/, '')}/${path.replace(/^\//, '')}`;

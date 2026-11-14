@@ -1,0 +1,23 @@
+---
+import DownloadLinks from './DownloadLinks.astro';
+import Icon from './Icon.astro';
+import { primaryRelease, sitePath, type Product } from '../data/products';
+interface Props { product: Product; compact?: boolean; }
+const { product, compact = false } = Astro.props;
+const stable = primaryRelease(product);
+const Heading = compact ? 'h3' : 'h2';
+---
+<div class:list={['version-options', { compact }]}>
+  <div class="stable-option">
+    <Heading>Definitive Randomizer {stable?.version.replace(/^v/, '') ?? '1.0.0'}</Heading>
+    {!compact && <p>La estable gratuita reúne los editores, Progressive BST, Global Template, Batch, mentas USUM y Player Level Caps.</p>}
+    <DownloadLinks product={product} />
+  </div>
+  <div class="preview-option">
+    <Heading>{compact ? 'Acceso anticipado · 1.1 Preview' : 'Prueba antes las próximas funciones'}</Heading>
+    <p>{compact ? 'Mega Ability Sync, perfiles compartibles y diagnóstico avanzado. La compilación v1.1.0-preview.1 se prepara para Ko-fi.' : 'La línea v1.1.0-preview.1 añade sincronización de habilidades, perfiles compartibles y diagnóstico avanzado. Los miembros de Ko-fi recibirán primero las compilaciones preparadas para probarlas.'}</p>
+    <a class="text-link" href="https://ko-fi.com/joanjuz">Conocer el acceso anticipado <Icon name="external" /></a>
+    {!compact && <p class="availability-note">En preparación. La descarga de esta preview todavía no está anunciada.</p>}
+  </div>
+  {compact && <a class="text-link version-details" href={sitePath('definitive-randomizer/#mega-ability-sync')}>Ver Mega Ability Sync y comparar versiones <Icon name="arrow" /></a>}
+</div>
