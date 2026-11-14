@@ -61,4 +61,8 @@ No se recopilan visitas mientras `PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN` esté v
 - [GitHub de joanjuz](https://github.com/joanjuz)
 - [Ko-fi](https://ko-fi.com/joanjuz)
 
-Decisiones, fuentes y procedencia de las capturas: [docs/DECISIONES.md](docs/DECISIONES.md).
+## Procedencia y atribuciones
+
+- Las capturas de la web son imágenes originales aportadas por el propietario de los proyectos; se conservan sin recreaciones ni alteraciones de contenido. No se copiaron sprites independientes ni archivos de juego.
+- Las descargas y su recuento proceden de GitHub Releases públicas ([Definitive Randomizer](https://github.com/joanjuz/Definitive-Randomizer/releases), [Tracker](https://github.com/joanjuz/NuzlockeTracker/releases)); el recuento es de descargas de archivos, no de usuarios o instalaciones únicas.
+- Los nombres y recursos de Pokémon pertenecen a sus titulares. Las aplicaciones son proyectos comunitarios independientes, gratuitos, con donaciones voluntarias, y no distribuyen ROMs ni archivos extraídos de juegos.

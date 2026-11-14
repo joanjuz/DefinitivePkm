@@ -15,3 +15,7 @@ test-results/
 skills-lock.json
 
 *.log
+
+# Planificacion interna: nunca en este repositorio publico
+/docs/Catalogo/
+/docs/ai/
