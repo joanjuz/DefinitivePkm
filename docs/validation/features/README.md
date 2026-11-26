@@ -82,3 +82,9 @@ Se atiende el [comentario de coordinación](https://github.com/joanjuz/Definitiv
 Validación de estas correcciones: `npm test` 30/30, `npm run check` sin diagnósticos y `npm run build` correcto. El build local conserva el snapshot verificado existente al no tener acceso a GitHub desde el entorno restringido. No se modifican versiones, contadores, dependencias ni estilos.
 
 Playwright revisó los tres bloques modificados a 1440, 768 y 390 px: texto actualizado y completo, sin desbordamiento horizontal ni errores de JavaScript. Capturas nuevas: [apoyo 1440](editorial-apoyo-1440.png), [390](editorial-apoyo-390.png); [Multitipo 1440](editorial-multitipo-1440.png), [390](editorial-multitipo-390.png); [instrucciones del Tracker 1440](editorial-tracker-1440.png), [390](editorial-tracker-390.png). Las 15 capturas anteriores documentan la implementación inicial del PR.
+
+## Captura real del editor de mapas y eventos
+
+Se sustituye el esquema de cuadrícula de `RandomizerFeatures.astro` por la captura proporcionada por el propietario, conservada sin editar en `src/assets/map-editor-events-platinum-cpue1.png`. Se referencia mediante `ScreenshotImage.astro`, con optimización responsive de Astro y ampliación al PNG original. Alt: «Editor de mapas y eventos en Pokémon Platino CPUE/1». Pie: «Eventos · Platino CPUE/1 · Vista real del editor». El resto del texto de la sección no cambia.
+
+Validación: 30/30 pruebas, check sin diagnósticos y build correcto. Playwright comprueba proporciones, carga y ausencia de desbordamiento a 1440, 768 y 390 px; Enter abre la captura, Escape cierra y devuelve el foco. Evidencias actuales: [escritorio](mapas-captura-real-1440.png), [tablet](mapas-captura-real-768.png) y [móvil](mapas-captura-real-390.png). Las capturas de mapas de la implementación inicial conservan el esquema anterior como registro histórico.
