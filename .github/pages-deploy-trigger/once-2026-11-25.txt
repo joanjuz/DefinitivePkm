@@ -1,3 +1,0 @@
-Publicación única autorizada por el propietario de PokeJuz.
-PR #6 fusionado: ba7836ef3bef603e095c9170e0cedcdebf7c6be8.
-Este marcador solo solicita ejecutar GitHub Pages una vez.
