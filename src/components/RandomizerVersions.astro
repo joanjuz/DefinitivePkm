@@ -15,9 +15,9 @@ const Heading = compact ? 'h3' : 'h2';
   </div>
   <div class="preview-option">
     <Heading>{compact ? 'Acceso anticipado · 1.1 Preview' : 'Prueba antes las próximas funciones'}</Heading>
-    <p>{compact ? 'Mega Ability Sync, perfiles compartibles y diagnóstico avanzado. La compilación v1.1.0-preview.1 se prepara para Ko-fi.' : 'La línea v1.1.0-preview.1 añade sincronización de habilidades, perfiles compartibles y diagnóstico avanzado. Los miembros de Ko-fi recibirán primero las compilaciones preparadas para probarlas.'}</p>
+    <p>{compact ? 'Línea 1.1.0-preview.3: mapas, habilidades especiales y otras novedades. Acceso anticipado mediante Ko-fi.' : 'La línea 1.1.0-preview.3 reúne las novedades de acceso anticipado, incluidas las ampliaciones de mapas y las opciones experimentales. Consulta su disponibilidad mediante Ko-fi.'}</p>
     <a class="text-link" href="https://ko-fi.com/joanjuz">Conocer el acceso anticipado <Icon name="external" /></a>
-    {!compact && <p class="availability-note">En preparación. La descarga de esta preview todavía no está anunciada.</p>}
+    {!compact && <p class="availability-note">No hay un ZIP público de esta Preview verificado en GitHub Releases. Las funciones documentadas en desarrollo pueden avanzar respecto a la compilación entregada; comprueba VERSION.txt y las notas del paquete.</p>}
   </div>
   {compact && <a class="text-link version-details" href={sitePath('definitive-randomizer/#mega-ability-sync')}>Ver Mega Ability Sync y comparar versiones <Icon name="arrow" /></a>}
 </div>
