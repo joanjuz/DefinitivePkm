@@ -1,12 +1,8 @@
 name: Publicar PokeJuz en GitHub Pages
 
-# Temporary one-time publication trigger. Restore workflow_dispatch-only after deployment.
+# Manual only: adding this file does not deploy the website.
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - '.github/pages-deploy-trigger/once-2026-11-25.txt'
 
 permissions:
   contents: read
