@@ -232,6 +232,66 @@ dialog::backdrop { background: rgb(0 0 0 / .85); }
 .platform-row tbody th { font-weight: 500; }
 .documentation-links { display: flex; flex-wrap: wrap; gap: .5rem 2rem; margin-top: 1.5rem; }
 code { overflow-wrap: anywhere; }
+.feature-shortcuts { display: flex; flex-wrap: wrap; gap: .2rem 1.25rem; margin-top: 1.1rem; max-width: 48ch; }
+.feature-shortcuts a { display: inline-flex; align-items: center; min-height: 44px; color: var(--accent); font-size: .875rem; }
+.feature-section { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 6rem); padding-block: var(--space); align-items: start; }
+.feature-section:nth-of-type(even) { background: var(--surface); }
+.feature-section.feature-reverse .feature-copy { order: 2; }
+.feature-copy, .feature-evidence { min-width: 0; }
+.feature-section h2 { font-size: clamp(1.8rem, 3.2vw, 3rem); }
+.feature-availability { color: var(--accent); font-size: .875rem; font-weight: 650; margin-bottom: 1.2rem; }
+.feature-lead { font-size: 1.2rem; line-height: 1.6; margin-top: 1.4rem; max-width: 48ch; }
+.feature-details-copy { color: var(--muted); max-width: 60ch; }
+.feature-details-copy > p { margin-top: 1.2rem; }
+.feature-copy > .text-link { margin-top: 1.5rem; }
+.feature-diagram { background: var(--footer); padding: clamp(1.1rem, 2.5vw, 2rem); }
+.feature-diagram h3 { font-size: 1.15rem; color: var(--accent); letter-spacing: -.025em; }
+.feature-diagram figcaption { margin-top: 1.5rem; }
+.platform-notes { margin-block: 1.5rem; }
+.platform-notes > div + div { margin-top: 1.2rem; }
+.platform-notes dt { font-weight: 750; color: var(--ink); }
+.platform-notes dd { margin: .35rem 0 0; color: var(--muted); }
+.diagram-label { font-size: .875rem; color: var(--muted); }
+.map-sketch { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 2px; background: var(--surface); padding: 2px; }
+.map-sketch > span { display: grid; place-items: center; aspect-ratio: 1; background: var(--bg); color: var(--accent); font-weight: 750; font-size: clamp(.75rem, 1.5vw, 1rem); }
+.map-sketch .map-grass { background: repeating-linear-gradient(135deg, #26352c 0 4px, #19251f 4px 8px); }
+.map-sketch .map-trigger { outline: 1px dashed var(--accent); outline-offset: -3px; }
+.bst-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: end; gap: 1rem; margin-top: 2rem; font-variant-numeric: tabular-nums; }
+.bst-steps > div { display: grid; gap: .8rem; }
+.bst-steps span { font-size: .875rem; }
+.bst-steps strong { font-size: 1rem; color: var(--accent); }
+.bst-bar { background: var(--accent); width: 100%; max-width: 5rem; }
+.bst-start { height: 4rem; opacity: .65; }
+.bst-middle { height: 7rem; opacity: .8; }
+.bst-end { height: 10rem; }
+.ability-diagram > div { padding-block: 1.2rem; }
+.ability-diagram > div + div { border-top: 1px solid #383e46; }
+.ability-diagram p { margin-top: .5rem; }
+.ability-diagram small { display: block; margin-top: .4rem; color: var(--muted); font-size: .875rem; }
+.ability-diagram p span { color: var(--accent); padding-inline: .35rem; }
+.flow-diagram { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+.flow-diagram li { display: grid; gap: .25rem; }
+.flow-diagram li + li::before { content: '↓'; color: var(--accent); margin-bottom: .5rem; font-size: 1.3rem; }
+.flow-diagram strong { color: var(--accent); font-size: 1.1rem; }
+.flow-diagram span { font-size: .875rem; color: var(--muted); }
+.soul-players { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
+.soul-players > div { display: grid; gap: .3rem; }
+.soul-players strong { color: var(--accent); }
+.soul-players span, .soul-room span { font-size: .875rem; color: var(--muted); }
+.soul-room { display: grid; gap: .5rem; text-align: center; padding: 1.5rem .5rem; margin-block: 1.25rem; border-block: 1px solid var(--accent); }
+.optional-players { border-inline: 1px dashed var(--accent); padding-inline: 1rem; }
+.team-comparison > div + div { margin-top: 1.75rem; }
+.team-comparison p { font-size: .875rem; color: var(--muted); margin-top: .4rem; }
+.team-slots { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: .5rem; margin-top: .8rem; }
+.team-slots span { display: grid; place-items: center; aspect-ratio: 1; background: var(--surface); border: 1px solid var(--accent); font-variant-numeric: tabular-nums; }
+.virtual-slots span { border-style: dashed; }
+.analysis-visual { display: grid; gap: 1.5rem; }
+@media (max-width: 760px) {
+  .feature-section { grid-template-columns: minmax(0, 1fr); }
+  .feature-section.feature-reverse .feature-copy { order: initial; }
+  .feature-lead { font-size: 1.1rem; }
+  .map-sketch > span { font-size: .875rem; }
+}
 .product-randomizer .detail-intro .back-link { margin-bottom: .75rem; }
 .product-randomizer .detail-intro .product-category { margin-bottom: .75rem; }
 @media (max-width: 760px) {

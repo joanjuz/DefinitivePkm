@@ -1,0 +1,67 @@
+---
+import FeatureSection from './FeatureSection.astro';
+const docs = 'https://github.com/joanjuz/Definitive-Randomizer/blob/main/docs/3ds-progressive/';
+---
+<FeatureSection id="mapas-eventos" title="Editor de mapas y eventos" description="Consulta el escenario con sus gráficos reales y prepara los cambios sobre el mapa. Cada plataforma permite operaciones distintas." availability="Base en 1.0.0 · Ampliaciones en la línea 1.1 Preview" compatibility="DS: editor de eventos de Platino USA CPUE/1. 3DS: X/Y, Rubí Omega/Zafiro Alfa y USUM; Sol/Luna no tiene adaptador de mapas." validation="Hay pruebas automáticas y comprobaciones con copias reales. En juego se han confirmado casos concretos de Platino, orientación en Ultra Luna, enfermeras en X y Ultra Luna y zonas de captura en X, OR/AS y USUM. No acredita todos los mapas." documentation={`${docs}MAPAS_3DS_GEN7.md`}>
+  <p>La estable incluye el editor de Platino para mover, añadir y copiar NPC. La línea Preview amplía la visualización con gráficos reales y la edición de eventos compatibles; las ampliaciones de 3DS pertenecen a esta línea.</p>
+  <dl class="platform-notes">
+    <div><dt>Nintendo DS</dt><dd>En Platino, orientación de NPC y visión de entrenadores de 0 a 6 casillas. Los objetos de fondo, warps y activadores existentes tienen campos editables; los destinos deben existir. Los NPC de objetos de suelo siguen protegidos.</dd></div>
+    <div><dt>Nintendo 3DS</dt><dd>Movimiento de NPC normales. En Gen6 se puede editar orientación y visión de entrenadores compatibles; en USUM, solo el ángulo de entrenadores quietos, sin moverlos ni editar su visión. Los demás eventos se pueden consultar.</dd></div>
+  </dl>
+  <p>En 3DS se pueden añadir enfermeras y zonas de encuentros admitidas. USUM también permite añadir hierba visible si el área tiene las texturas necesarias: colocar hierba y crear encuentros son operaciones separadas. Gen6 no añade hierba visible.</p>
+  <figure slot="visual" class="feature-diagram">
+    <div class="map-sketch" aria-hidden="true">
+      {Array.from({ length: 48 }, (_, i) => <span class:list={{ 'map-grass': [27,28,29,35,36,37].includes(i), 'map-trigger': [10,11,18,19].includes(i) }}>{i === 17 ? 'N →' : i === 22 ? '◇' : i === 33 ? '+' : i === 5 ? '▪' : ''}</span>)}
+    </div>
+    <figcaption>Esquema propio, sin gráficos de juego. N → NPC y orientación · ◇ warp · + enfermera · ▪ objeto. El contorno discontinuo representa un activador; las casillas tramadas, una zona de encuentros.</figcaption>
+  </figure>
+  <p slot="technical" class="availability-note">En USUM, la enfermera usa la rutina de curación y los diálogos de Lylia. La hierba visible solo tiene confirmación jugable en un caso de Ultra Luna. <a href={`${docs}MAPAS_3DS_ZONAS_CAPTURA.md`}>Ver zonas de captura</a> · <a href={`${docs}NDS_EVENTOS_OBJETOS_WARPS_ACTIVADORES.md`}>Ver eventos DS</a></p>
+</FeatureSection>
+
+<FeatureSection id="progressive-bst" title="Progressive BST y dificultad progresiva" description="Configura la fuerza de los Pokémon que aparecen a lo largo de la aventura, en lugar de usar el mismo rango desde el inicio." availability="Incluido en la estable 1.0.0" compatibility="Las opciones de progresión dependen del juego y de la plataforma. El escalado está más desarrollado en Ultra Sol y Ultra Luna." validation="Función implementada en la estable. La matriz oficial separa pruebas automáticas, archivos reales y comprobaciones jugables por plataforma; no implica una aventura completa validada para cada configuración." documentation={`${docs}ESCALADO_CRONOLOGIA_HISTORIA.md`} reverse>
+  <p>BST es la suma de las estadísticas base. Progressive BST permite ajustar los rangos de fuerza según el avance. Combínalo con el escalado de encuentros y entrenadores disponible para tu proyecto.</p>
+  <p>Las configuraciones inteligentes de entrenadores contemplan movimientos y objetos equipados. Los límites de nivel de entrenadores y Player Level Caps se configuran por separado; el parche para el jugador requiere un perfil compatible de USUM.</p>
+  <figure slot="visual" class="feature-diagram progression-diagram">
+    <p class="diagram-label">Ejemplo ilustrativo · No es una configuración recomendada</p>
+    <div class="bst-steps">
+      <div><span>Inicio</span><div class="bst-bar bst-start"></div><strong>250–350</strong></div>
+      <div><span>Tramo medio</span><div class="bst-bar bst-middle"></div><strong>350–450</strong></div>
+      <div><span>Tramo final</span><div class="bst-bar bst-end"></div><strong>450–550</strong></div>
+    </div>
+    <figcaption>Rangos ficticios de BST para explicar una progresión. Las barras representan fuerza base, no niveles ni estadísticas actuales de un Pokémon.</figcaption>
+  </figure>
+</FeatureSection>
+
+<FeatureSection id="habilidades-especiales" title="Habilidades especiales" description="Tres opciones experimentales para extender Multitipo, Disfraz y Sistema Alfa a otras especies de Ultra Sol y Ultra Luna." availability="Línea 1.1 Preview · Experimentales" compatibility="Solo perfiles acreditados de Ultra Sol y Ultra Luna. No se ofrecen para Sol/Luna, X/Y ni OR/AS." validation="Pruebas automáticas y comprobaciones sobre archivos reales. Disfraz y Sistema Alfa tienen confirmaciones jugables en US y UM. Para Multitipo, el propietario confirmó los casos que probó con Tabla y cristal Z, sin desglose por título o revisión. Hay escenarios de combate pendientes." documentation={`${docs}MULTITIPO_OTRAS_ESPECIES_USUM.md`}>
+  <p>Son opciones independientes y desactivadas por defecto. No asignan habilidades automáticamente: el Pokémon debe tener la habilidad correspondiente. Multitipo y Sistema Alfa pueden instalarse juntos.</p>
+  <p>Las otras especies conservan su aspecto. Disfraz protege del primer golpe sin enviarlas a formas inexistentes. Estas comprobaciones no validan individualmente golpes múltiples, Rompemoldes, Transformación o todos los cambios de objeto durante el combate.</p>
+  <figure slot="visual" class="feature-diagram ability-diagram">
+    <div><h3>Multitipo</h3><p>Tabla equipada <span aria-hidden="true">→</span> tipo de la Tabla</p><small>Sin Tabla: Normal</small></div>
+    <div><h3>Disfraz</h3><p>Primer golpe <span aria-hidden="true">→</span> daño anulado</p><small>Protección consumida · Misma forma</small></div>
+    <div><h3>Sistema Alfa</h3><p>Memoria equipada <span aria-hidden="true">→</span> tipo de la Memoria</p><small>Sin Memoria: Normal</small></div>
+    <figcaption>Esquemas de las mecánicas con su opción instalada y su habilidad asignada. <a href={`${docs}DISFRAZ_OTRAS_ESPECIES_USUM.md`}>Disfraz</a> · <a href={`${docs}SISTEMA_ALFA_OTRAS_ESPECIES_USUM.md`}>Sistema Alfa</a></figcaption>
+  </figure>
+  <p slot="technical" class="availability-note">La <a href="https://github.com/joanjuz/Definitive-Randomizer/pull/140#issuecomment-7170219396">confirmación jugable de Multitipo</a> no acredita el recálculo del tipo al cambiar de objeto en combate, Desarme, Truco ni Juicio. La opción sigue siendo experimental.</p>
+</FeatureSection>
+
+<FeatureSection id="caramelos-raros" title="Caramelos Raros de uso múltiple" description="Elige en la Bolsa cuántos Caramelos Raros quieres utilizar y deja que el juego los aplique uno a uno." availability="Línea 1.1 Preview · Desactivado por defecto" compatibility="Rubí Omega en el perfil acreditado sin la actualización 1.4; Ultra Sol y Ultra Luna con sus perfiles compatibles. No acreditado para Zafiro Alfa, X/Y ni Sol/Luna." validation="Rubí Omega: caso confirmado en juego. USUM: prototipo confirmado en los dos juegos y comparación de la rutina con el instalador. La combinación con Player Level Caps en USUM no tiene prueba jugable." documentation={`${docs}CARAMELOS_RAROS_PERSONALIZADOS_USUM.md`} reverse>
+  <p>Los caramelos ya deben estar en el inventario. Con más de uno aparece el selector de cantidad; con uno se conserva el uso original. La selección no puede superar las existencias.</p>
+  <p>El parche consume los objetos al utilizarlos. No genera caramelos, no ofrece inventarios infinitos ni edita partidas guardadas. La secuencia se detiene cuando el juego no permite seguir; en USUM también se detiene al evolucionar.</p>
+  <figure slot="visual" class="feature-diagram">
+    <ol class="flow-diagram"><li><strong>Bolsa</strong><span>Caramelos existentes</span></li><li><strong>Seleccionar cantidad</strong><span>Hasta el total disponible</span></li><li><strong>Utilizar varios</strong><span>Consumo de uno en uno</span></li></ol>
+    <figcaption>El Randomizer instala la opción; la cantidad se elige dentro del juego. <a href={`${docs}CARAMELOS_RAROS_PERSONALIZADOS_OR.md`}>Perfil de Rubí Omega</a></figcaption>
+  </figure>
+</FeatureSection>
+
+<FeatureSection id="plantillas-historial" title="Global Template, Batch e historial" description="Guarda una configuración, vuelve a aplicarla en un proyecto compatible y genera varias salidas con Batch." availability="Global Template y Batch en 1.0.0 · Perfiles compartibles en 1.1 Preview" compatibility="Global y Batch tienen capacidades propias por plataforma. Los perfiles .drprofile.json de Preview son de 3DS y comprueban compatibilidad antes de importar." validation="La reproducción y la recuperación tienen comprobaciones automáticas y con archivos reales según la operación. Reutilizar una configuración no garantiza compatibilidad entre juegos ni una validación jugable del resultado." documentation={`${docs}HITO_16_GLOBAL_TEMPLATE_BATCH.md`}>
+  <p>Global Template registra opciones y operaciones reproducibles. Batch permite generar varias salidas desde esa configuración. Conserva también la semilla, la versión y los recursos externos para poder repetir el proceso.</p>
+  <p>En Preview, exporta e importa perfiles de configuración y elige las secciones que aplicar. El perfil no incluye ROMs ni todos los recursos externos.</p>
+  <figure slot="visual" class="feature-diagram">
+    <ol class="flow-diagram"><li><strong>Configuración</strong><span>Opciones y semilla</span></li><li><strong>Proyecto compatible</strong><span>Aplicar Global Template</span></li><li><strong>Resultado</strong><span>Una salida o varias con Batch</span></li></ol>
+    <figcaption>Repetir el proceso requiere entradas y recursos compatibles.</figcaption>
+  </figure>
+  <dl slot="technical" class="platform-notes">
+    <div><dt>3DS</dt><dd>Deshacer cubre los últimos ocho cambios guardados; no revierte partidas ni ROMs generadas. Algunas operaciones de mapas USUM usan restauración específica del área por su tamaño.</dd></div>
+    <div><dt>DS y Switch</dt><dd>DS usa proyectos .drproj, checkpoints y restauración de cambios compatibles. No ofrece el mismo Deshacer de 3DS. Switch tampoco debe interpretarse como equivalente a ese historial.</dd></div>
+  </dl>
+</FeatureSection>

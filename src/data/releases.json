@@ -4,7 +4,7 @@
     "family": "wpf-v1",
     "repositoryUrl": "https://github.com/joanjuz/Definitive-Randomizer",
     "releasesUrl": "https://github.com/joanjuz/Definitive-Randomizer/releases",
-    "checkedAt": "2026-11-14T02:01:54.201Z",
+    "checkedAt": "2026-11-26T01:06:51.910Z",
     "stable": {
       "version": "v1.0.0",
       "url": "https://github.com/joanjuz/Definitive-Randomizer/releases/tag/v1.0.0",
@@ -19,7 +19,7 @@
       "sourceCommit": "533487a19ab345f8421e5ec912ed0cff69674af6"
     },
     "preview": null,
-    "totalDownloads": 109,
+    "totalDownloads": 175,
     "countedAssets": 18
   },
   "tracker": {
@@ -27,21 +27,21 @@
     "family": "tracker",
     "repositoryUrl": "https://github.com/joanjuz/NuzlockeTracker",
     "releasesUrl": "https://github.com/joanjuz/NuzlockeTracker/releases",
-    "checkedAt": "2026-11-14T02:01:54.911Z",
+    "checkedAt": "2026-11-26T01:06:52.550Z",
     "stable": {
-      "version": "v1.4.0",
-      "url": "https://github.com/joanjuz/NuzlockeTracker/releases/tag/v1.4.0",
-      "publishedAt": "2026-11-12T04:05:24Z",
+      "version": "v1.6.0",
+      "url": "https://github.com/joanjuz/NuzlockeTracker/releases/tag/v1.6.0",
+      "publishedAt": "2026-11-17T19:55:12Z",
       "prerelease": false,
       "assets": [
         {
           "name": "PokemonTracker-Windows-x64.zip",
-          "url": "https://github.com/joanjuz/NuzlockeTracker/releases/download/v1.4.0/PokemonTracker-Windows-x64.zip"
+          "url": "https://github.com/joanjuz/NuzlockeTracker/releases/download/v1.6.0/PokemonTracker-Windows-x64.zip"
         }
       ]
     },
     "preview": null,
-    "totalDownloads": 16,
-    "countedAssets": 7
+    "totalDownloads": 23,
+    "countedAssets": 9
   }
 }
