@@ -91,7 +91,7 @@ export const products = [
     ],
     requirements: ['Windows 10 u 11 de 64 bits.', 'Microsoft Edge WebView2 Runtime.', 'Lime3DS y un juego compatible en versión 1.0 para la lectura en vivo. Otras opciones dependen de la compatibilidad del emulador.', 'El ejecutable incluye sus dependencias; no requiere Python ni Node.js.'],
     games: 'Juegos compatibles: X/Y, Rubí Omega/Zafiro Alfa y Ultra Sol/Ultra Luna 1.0. La documentación de v1.6.0 valida principalmente Lime3DS en Windows; no garantiza Azahar, Citra, otras revisiones ni todas las ROM modificadas.',
-    steps: ['Descarga y extrae PokemonTracker-Windows-x64.zip.', 'Abre PokemonTracker.exe.', 'Inicia el juego en Lime3DS o Azahar.', 'En Conexión, selecciona el juego y el proceso del emulador.'],
+    steps: ['Descarga y extrae PokemonTracker-Windows-x64.zip.', 'Abre PokemonTracker.exe.', 'Inicia el juego en Lime3DS, el emulador principalmente validado. La compatibilidad con Azahar no está garantizada para todas las revisiones.', 'En Conexión, selecciona el juego y el proceso del emulador.'],
     note: 'Soul Link es opcional y requiere configuración adicional. Consulta las instrucciones del repositorio antes de vincular partidas; las funciones pueden variar según el juego.',
     image: trackerImage,
     imageAlt: 'Pokémon Tracker Progressive con el equipo de Ultra Sol, PS, estadísticas, habilidades, objetos y movimientos de la última sesión guardada.',

@@ -70,3 +70,15 @@ La comprobación de Pokechu es de acceso y conservación de su integración; no 
 La instalación informa de avisos de seguridad del lockfile existente. `npm audit --omit=dev` identifica Astro 7.4.0 (una dependencia con severidad agregada moderada): [inyección en nombres de etiquetas dinámicas](https://github.com/advisories/GHSA-mh32-jxcr-mh9f) y [endpoint de imágenes de @astrojs/node](https://github.com/advisories/GHSA-r3h5-4585-7x3w). Este proyecto genera archivos estáticos y no usa ese adaptador; los nombres dinámicos actuales son constantes internas h2/h3. Conviene revisar la actualización de Astro en un cambio separado. No se ejecutó `audit fix` ni se cambió la arquitectura.
 
 No se ha fusionado el PR, ejecutado el workflow de Pages ni publicado producción.
+
+## Correcciones editoriales de la revisión del PR #6
+
+Se atiende el [comentario de coordinación](https://github.com/joanjuz/DefinitivePkm/pull/6#issuecomment-7179830002) en la misma rama:
+
+- Multitipo incorpora la [confirmación del propietario del PR #140](https://github.com/joanjuz/Definitive-Randomizer/pull/140#issuecomment-7170219396) para los casos que probó con Tabla y cristal Z. No se atribuyen pruebas por cada título o revisión, recálculo del tipo al cambiar de objeto, Desarme, Truco ni Juicio. Se conserva su estado experimental.
+- La portada aclara que las versiones estables y los minijuegos son gratuitos, las aportaciones de apoyo son voluntarias y la membresía permite recibir compilaciones Preview anticipadas bajo GPLv3.
+- Las instrucciones del Tracker dan preferencia a Lime3DS y explican que Azahar no está garantizado para todas las revisiones.
+
+Validación de estas correcciones: `npm test` 30/30, `npm run check` sin diagnósticos y `npm run build` correcto. El build local conserva el snapshot verificado existente al no tener acceso a GitHub desde el entorno restringido. No se modifican versiones, contadores, dependencias ni estilos.
+
+Playwright revisó los tres bloques modificados a 1440, 768 y 390 px: texto actualizado y completo, sin desbordamiento horizontal ni errores de JavaScript. Capturas nuevas: [apoyo 1440](editorial-apoyo-1440.png), [390](editorial-apoyo-390.png); [Multitipo 1440](editorial-multitipo-1440.png), [390](editorial-multitipo-390.png); [instrucciones del Tracker 1440](editorial-tracker-1440.png), [390](editorial-tracker-390.png). Las 15 capturas anteriores documentan la implementación inicial del PR.
