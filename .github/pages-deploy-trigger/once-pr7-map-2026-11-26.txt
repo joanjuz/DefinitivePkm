@@ -1,0 +1,3 @@
+Publicación única aprobada por el propietario: PR #7.
+Commit fusionado: 681407d9ffbedcaebb832a3057a5c40fc90d945d.
+Objetivo: captura real de editor de mapas Platino CPUE/1.
