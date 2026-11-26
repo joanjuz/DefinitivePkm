@@ -1,0 +1,50 @@
+---
+import FeatureSection from './FeatureSection.astro';
+import ProductImage from './ProductImage.astro';
+import type { Product } from '../data/products';
+interface Props { product: Product; }
+const { product } = Astro.props;
+const docs = 'https://github.com/joanjuz/NuzlockeTracker/blob/v1.6.0/docs/';
+const shot = (title: string) => product.gallery.find(image => image.title === title);
+---
+<FeatureSection id="equipo-cajas" title="Equipo y cajas en vivo" description="Consulta la lectura del emulador para revisar tu equipo, sus movimientos y los Pokémon guardados en las cajas." availability="Estable gratuita · v1.6.0" compatibility="X/Y, Rubí Omega/Zafiro Alfa y Ultra Sol/Ultra Luna 1.0. La documentación actual valida principalmente Lime3DS en Windows; Azahar, Citra y otras revisiones no tienen compatibilidad garantizada." validation="La lectura implementada comprueba los datos antes de mostrarlos. Un PC vacío sin confirmar conserva la última lectura guardada; no se presenta como una caja nueva validada." documentation="https://github.com/joanjuz/NuzlockeTracker/blob/v1.6.0/README.md">
+  <p>Revisa estadísticas, habilidades, objetos equipados, movimientos y PS. Las cajas admiten búsqueda y vista Living Dex: 31 cajas en Gen6 y 32 en USUM.</p>
+  <p>Selecciona juego y proceso en Conexión. El acceso a la memoria es de solo lectura: el Tracker no escribe en la RAM, no cambia el equipo del emulador ni edita la ROM o la partida.</p>
+  <ProductImage slot="visual" {product} screenshot={shot('Cajas')} sizes="(max-width: 760px) 90vw, 45vw" />
+</FeatureSection>
+
+<FeatureSection id="soul-link" title="Soul Link de 2 a 4 jugadores" description="Crea una sala, comparte una invitación común y vincula las capturas que elija cada participante." availability="Incluido desde v1.5.0 · Conservado en v1.6.0" compatibility="Las salas requieren una red local de confianza o una VPN cifrada configurada. No atraviesan NAT ni configuran una conexión universal por Internet." validation="El propietario confirmó las funciones de la experiencia que probó. Las pruebas automáticas cubren también protocolo y privacidad; no equivalen a validar todas las redes y partidas." documentation={`${docs}SOUL_LINK.md`} reverse>
+  <p>Cada jugador controla «Compartir mi partida», desactivado al entrar. Puede enlazar una captura sin compartir su equipo completo, cajas, objetos o movimientos.</p>
+  <p>Los avisos de muertes enlazadas son opcionales y requieren confirmación manual. Ningún participante cambia la partida de otro. Las rutas de juegos distintos no se equiparan por compartir identificador.</p>
+  <figure slot="visual" class="feature-diagram soul-diagram">
+    <div class="soul-players"><div><strong>Jugador A</strong><span>Crea la sala</span></div><div><strong>Jugador B</strong><span>Se une</span></div></div>
+    <div class="soul-room"><strong>Una invitación compartida</strong><span>Capturas elegidas · Privacidad individual</span></div>
+    <div class="soul-players optional-players"><div><strong>Jugador C</strong><span>Opcional</span></div><div><strong>Jugador D</strong><span>Opcional</span></div></div>
+    <figcaption>De dos a cuatro participantes. El enlace permite entrar; cada jugador decide si comparte su vista completa.</figcaption>
+  </figure>
+</FeatureSection>
+
+<FeatureSection id="analisis-equipos" title="Analiza el equipo y prueba otras composiciones" description="Compara debilidades, resistencias y cobertura antes de elegir qué Pokémon llevar." availability="Análisis avanzado y constructor · Estable v1.6.0" compatibility="Análisis defensivo de los 18 tipos y cobertura ofensiva basada en movimientos conocidos. Los datos exactos de Definitive Game Data prevalecen sobre las referencias estándar." validation="Funciones cubiertas por pruebas automáticas y aceptación del propietario para los casos que probó en Windows. Las recomendaciones explican beneficios y riesgos; no predicen un equipo óptimo para todos los combates." documentation={`${docs}ANALISIS_Y_EQUIPOS.md`}>
+  <p>Consulta estadísticas base, BST, inmunidades y multiplicadores en gráficos y tablas. En una ROM modificada, la referencia estándar puede diferir: importa los datos de tu proyecto cuando estén disponibles.</p>
+  <p>El constructor permite elegir hasta seis Pokémon del equipo y las cajas, guardar composiciones y compararlas con el equipo real. Sus recomendaciones consideran cobertura, sinergia y estadísticas base.</p>
+  <div slot="visual" class="analysis-visual">
+    <figure class="feature-diagram team-comparison">
+      <div><h3>Equipo real</h3><p>Lectura del emulador</p><div class="team-slots" aria-hidden="true">{Array.from({length: 6}, (_, i) => <span>{i + 1}</span>)}</div></div>
+      <div><h3>Equipo virtual</h3><p>Selección manual · Hasta seis</p><div class="team-slots virtual-slots" aria-hidden="true">{Array.from({length: 6}, (_, i) => <span>{i < 4 ? i + 1 : '·'}</span>)}</div></div>
+      <figcaption>Ejemplo ilustrativo. El equipo virtual se guarda en el Tracker y no modifica el equipo del juego.</figcaption>
+    </figure>
+    <ProductImage {product} screenshot={shot('Análisis')} sizes="(max-width: 760px) 90vw, 45vw" />
+  </div>
+</FeatureSection>
+
+<FeatureSection id="obs" title="Fuentes personalizables para OBS" description="Compón la escena con el equipo, barras de PS, objetos y contadores del Tracker como fuentes de navegador." availability="Fuentes OBS · Mejoras de composición en v1.6.0" compatibility="Fuentes locales, normalmente en 127.0.0.1 con el puerto del Tracker. Puedes separar integrantes y capas, y usar tus propios sprites y estilos por perfil." validation="Las notas de v1.6.0 documentan pruebas automáticas y una revisión en OBS 33.0.1 con datos sintéticos. Revisa el aspecto de tu escena real, sus animaciones y el tamaño configurado." documentation={`${docs}OBS_OVERLAYS.md`} reverse>
+  <p>Copia las URL desde el editor OBS y añádelas como fuentes de navegador. Personaliza equipo, PS, objetos equipados, vidas y muertes; el cementerio admite distribución horizontal, vertical y en cuadrícula.</p>
+  <p>Los recuadros mantienen su geometría al cambiar sprites o textos. Si cambias deliberadamente tamaño o distribución, ajusta también las dimensiones de la fuente en OBS. Los sprites personalizados se eligen en el Tracker.</p>
+  <ProductImage slot="visual" {product} screenshot={shot('OBS')} sizes="(max-width: 760px) 90vw, 45vw" />
+</FeatureSection>
+
+<FeatureSection id="nuzlocke-progreso" title="Registra el Nuzlocke y sus límites de nivel" description="Organiza rutas, capturas y bajas, consulta el historial y define las etapas de tu aventura." availability="Registro Nuzlocke · Level Caps desde v1.4.0" compatibility="Etapas manuales por partida con importación y exportación. No incluye una lista universal de límites oficiales." validation="En v1.6.0, las sugerencias de cambio de etapa son opcionales, empiezan desactivadas y necesitan confirmación. Una lectura tras cargar una partida o un save state no demuestra una subida real de nivel." documentation={`${docs}LIMITES_NIVEL.md`}>
+  <p>Registra capturas por zona, encuentros fallidos, bajas, regalos e intercambios. Mantén el historial de cada aventura y elige su etapa de progresión.</p>
+  <p>Los Level Caps del Tracker son avisos informativos cuando un Pokémon supera el límite vigente. No cambian el juego, no bloquean experiencia ni aplican el parche Player Level Caps del Randomizer.</p>
+  <ProductImage slot="visual" {product} screenshot={shot('Rutas')} sizes="(max-width: 760px) 90vw, 45vw" />
+</FeatureSection>

@@ -6,6 +6,9 @@ import ProductImage from '../components/ProductImage.astro';
 import RandomizerVersions from '../components/RandomizerVersions.astro';
 import RandomizerPreview from '../components/RandomizerPreview.astro';
 import RandomizerCompatibility from '../components/RandomizerCompatibility.astro';
+import RandomizerFeatures from '../components/RandomizerFeatures.astro';
+import TrackerFeatures from '../components/TrackerFeatures.astro';
+import { featureNavigation } from '../data/feature-navigation';
 import { products, sitePath, type Product } from '../data/products';
 export function getStaticPaths() { return products.map(product => ({ params: { producto: product.slug }, props: { product } })); }
 interface Props { product: Product; }
@@ -20,11 +23,16 @@ const { product } = Astro.props;
       <p class="detail-description">{product.description}</p>
       {product.id === 'randomizer' ? <>
         <section id="versiones" aria-label="Versión estable y acceso anticipado"><RandomizerVersions product={product} /></section>
-        <nav class="detail-nav" aria-label="Secciones de Definitive Randomizer"><a href="#versiones">Versiones</a><a href="#mega-ability-sync">Mega Ability Sync</a><a href="#compatibilidad">Compatibilidad</a><a href="#start-title">Instalación</a></nav>
       </> : <DownloadLinks product={product} />}
+      <nav class="detail-nav" aria-label={`Funciones de ${product.name}`}>
+        {product.id === 'randomizer' && <a href="#versiones">Versiones</a>}
+        {featureNavigation[product.id].map(([id, title]) => <a href={`#${id}`}>{title}</a>)}
+        <a href="#requirements-title">Requisitos</a><a href="#start-title">Instalación</a>
+      </nav>
       <p class="product-note">{product.note}</p>
     </section>
     {product.id === 'randomizer' && <RandomizerPreview />}
+    {product.id === 'randomizer' ? <RandomizerFeatures /> : <TrackerFeatures {product} />}
     <div class="detail-screenshot wrap"><ProductImage product={product} eager sizes="(min-width: 1921px) 90vw, (min-width: 1500px) 1350px, 90vw" /></div>
     <section class="gallery-section wrap" aria-labelledby="gallery-title">
       <h2 id="gallery-title">Capturas del programa</h2>

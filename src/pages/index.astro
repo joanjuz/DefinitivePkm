@@ -6,6 +6,7 @@ import DownloadLinks from '../components/DownloadLinks.astro';
 import RandomizerVersions from '../components/RandomizerVersions.astro';
 import ProductImage from '../components/ProductImage.astro';
 import { products, sitePath, formatDate } from '../data/products';
+import { featureNavigation } from '../data/feature-navigation';
 ---
 <Layout title="PokeJuz · Randomizer, Tracker y Pokechu" description="Edita tus juegos con Definitive Randomizer, consulta tu equipo con Pokémon Tracker Progressive y juega a los minijuegos de Pokechu.">
   <section class="hero wrap" aria-labelledby="home-title">
@@ -23,6 +24,9 @@ import { products, sitePath, formatDate } from '../data/products';
         <h2 id={`title-${product.id}`}>{product.titleLines[0]} <br />{product.titleLines[1]}</h2>
         <p class="product-description">{product.description}</p>
         <p class="compatibility">{product.compatibility}</p>
+        <nav class="feature-shortcuts" aria-label={`Funciones destacadas de ${product.name}`}>
+          {featureNavigation[product.id].map(([id, title]) => <a href={sitePath(`${product.slug}/#${id}`)}>{title}</a>)}
+        </nav>
         {product.id === 'randomizer' ? <RandomizerVersions product={product} compact /> : <DownloadLinks product={product} showDetails />}
         <details class="feature-details" id={`funciones-${product.id}`}>
           <summary>Funciones y requisitos</summary>
